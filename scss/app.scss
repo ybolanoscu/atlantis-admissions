@@ -1,0 +1,663 @@
+@import '../css/style.css';
+@import './_variables';
+@import './_mixins';
+//Estilos para Woocommerce
+
+.woocommerce-form-login{
+  width: 60%;
+  margin: 0 auto!important;
+  @media (max-width:768px) {
+    width: 100%;
+  }
+  p.form-row{
+    position: relative;
+    .button{
+      position: absolute;
+      right:0;
+    }
+  }
+  input:not([type="checkbox"]){
+    height: 30px;
+    font-size: .9rem;
+    @include input();     
+  }
+}
+.woocommerce-ResetPassword{
+  margin: 25px auto;
+  width: 50%;
+  @media (max-width:768px) {
+    width: 100%;
+  }
+  p.form-row{
+    width: 100%;
+    position: relative;
+    input{
+      height: 30px;
+      font-size: .9rem;
+      @include input();     
+    }
+    button{
+      position: absolute;
+      right:0;
+    }
+  }
+}
+
+main#main,
+aside#secondary {
+  input[type="submit"],
+  button[type="submit"] {
+    @include buttonStyle;
+  }
+  a {
+    color: $defaultColor;
+    &:hover {
+      color: lighten($defaultColor, 30%);
+      text-decoration: none;
+    }
+  }
+  ul {
+    list-style: none;
+  }
+  h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $defaultColor;
+  }
+  section:not([id^="search"]) {
+    display: inline;
+    h2 {
+      margin-left: 15px;
+      @media (max-width: 768px) {
+        margin-left: 0;
+      }
+    }
+    ul {
+      margin-left: 15px;
+      padding: 0;
+      @media (max-width: 768px) {
+        margin-left: 0;
+      }
+    }
+    @media (max-width:768px) {
+      text-align: center;
+    }
+  }
+}
+
+main#main {
+  display: inline;
+  width: 80%;
+  float: right;
+  position: relative;
+  div.woocommerce-tabs {
+    ul.tabs {
+      padding: 0;
+    }
+  }
+  form#commentform {
+    p.comment-form-comment {
+      textarea {
+        width: 100%;
+      }
+      label {
+        color: $defaultColor;
+      }
+    }
+    p.form-submit {
+      width: 100%;
+      float: left;
+      input[type="submit"] {
+        float: right;
+      }
+    }
+  }
+  div.comments-area {
+    width: 100%;
+    div.comment-respond {
+      margin: 35px auto;
+      width: 80%;
+    }
+    &~nav.navigation {
+      width: 20%;
+      margin: 0 auto;
+      div[class^="nav"] {
+        display: inline;
+        margin-right: 5px;
+      }
+    }
+    &~i {
+      color: $defaultColor;
+    }
+  }
+  header.woocommerce-products-header {
+    text-align: center;
+    h1.woocommerce-products-header__title page-title {
+      font-size: 1.5rem !important;
+    }
+    &~p.woocommerce-result-count {
+      text-align: center;
+    }
+  }
+  form.woocommerce-ordering {
+    width: 150px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  ul.products {
+    margin-top: 20px;
+    position: relative;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    text-align: center;
+    a.added_to_cart {
+      line-height: 25px;
+      &:before {
+        @include icon("\f07a", 3px);
+      }
+    }
+    span.price {
+      display: inline;
+    }
+    span.onsale {
+      position: absolute;
+      top: -10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: darkorange;
+    }
+    li.product {
+      display: inline;
+      padding: 15px;
+      width: 30%;
+      float: left;
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+      @media (min-width:600px) and (max-width:768px) {
+        width: 50%;
+      }
+      a {
+        text-align: center;
+        img {
+          width: 100%;
+          height: auto;
+        }
+        h2.woocommerce-loop-product__title {
+          text-align: center;
+          margin-top: 25px;
+          display: block;
+          margin: 10px auto;
+          color: $defaultColor;
+          &:hover {
+            color: lighten($defaultColor, 30%);
+          }
+        }
+        &.button {
+          text-align: center;
+          margin: 0 auto;
+          display: block;
+          width: 120px;
+          margin-top: 10px;
+          &:hover {
+            border-color: lighten($defaultColor, 30%);
+          }
+        }
+      }
+    }
+  }
+  nav.woocommerce-pagination {
+    display: block;
+    width: 100%;
+    text-align: center;
+    ul.page-numbers {
+      line-height: 5;
+      display: inline-block;
+      margin: 0 auto;
+      li {
+        display: inline;
+        background: $defaultColor;
+        color: white;
+        font-weight: bold;
+        padding: 10px 15px;
+        width: 30px;
+        text-align: center;
+        border-radius: 5px;
+        &:hover {
+          background: lighten($defaultColor, 20%);
+        }
+        a {
+          color: white;
+        }
+      }
+    }
+  } //product 
+  nav.woocommerce-breadcrumb {
+    margin: 30px;
+  }
+  div.product-type-simple {
+    padding: 30px;
+    div.woocommerce-product-gallery {
+      float: right;
+      width: 50%;
+      img {
+        width: 310px;
+        float: right;
+        margin-bottom: 10px;
+      }
+    }
+  } //Fin del producto
+  @media (max-width:768px) {
+    width: 100%;
+  }
+}
+
+aside#secondary {
+  padding: 20px;
+  display: inline;
+  width: 20%;
+  float: left;
+  position: relative;
+  a {
+    color: $defaultColor;
+    font-weight: bold;
+    &:hover {
+      color: lighten($defaultColor, 20%);
+    }
+  }
+  @media (max-width:768px) {
+    width: 100%;
+  }
+  form.search-form {
+    margin-top: 25px;
+    width: 100%;
+    input[type="search"] {
+      width: 80%;
+      display: inline;
+      &:focus {
+        @include input;
+      }
+    }
+    div {
+      display: inline;
+      width: 20%;
+      padding: 0 !important;
+    }
+  }
+}
+
+//Pagina del Carro de Compras
+div.woocommerce {
+  button[type="submit"],
+  input[type="submit"] {
+    @include buttonStyle;
+    &[disabled] {
+      pointer-events: none;
+      background: gray;
+      border-color: gray;
+    }
+  }
+  text-align: center;
+  a {
+    color: $defaultColor !important;
+    &:hover {
+      text-decoration: none;
+      color: lighten($defaultColor, 30%) !important;
+    }
+  }
+  table {
+    background: white;
+    thead {
+      color: white;
+      background: lighten($defaultColor, 30%);
+    }
+    tr {
+      td.product-name {
+        a {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+      }
+      td.product-remove {
+        a {
+          margin: 0;
+          color: $defaultColor !important;
+          background: transparent;
+          border: solid 1px $defaultColor;
+          border-radius: 5px;
+          &:hover {
+            background: $defaultColor;
+          }
+        }
+      }
+      td.actions {
+        div.coupon {
+          input[name="coupon_code"] {
+            width: 150px;
+          }
+        }
+      }
+    }
+  }
+  div.cart-collaterals {
+    div.wc-proceed-to-checkout {
+      a {
+        @include buttonStyle;
+      }
+    }
+  }
+  nav.woocommerce-MyAccount-navigation {
+    width: 20%;
+    float: left;
+    @media (max-width: 768px) {
+      width: 100%;
+      display: block;
+    }
+    ul {
+      display: block;
+      float: left;
+      border: 1px solid #DDDDDD;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      li {
+        display: block;
+        width: 100%;
+        border-top: 1px solid #DDDDDD;
+        float: left;
+        &:first-child {
+          padding: 10px;
+          border-top: 0;
+          background: #DDDDDD;
+        }
+        a {
+          display: block;
+          width: 100%;
+          padding: 10px;
+          float: left;
+          &:hover {
+            color: white !important;
+            background:lighten($color: $defaultColor, $amount: 40);
+            transition: background .5s;
+          }
+        }
+      }
+    }
+  }
+  div.woocommerce-MyAccount-content {
+    padding: 0 15px 0 15px;
+    width: 80%;
+    float: right;
+    @media (max-width: 768px) {
+      width: 100%;
+      display: block;
+      margin-top:20px;
+      p {
+        text-align: center;
+      }
+    }
+    p {
+      text-align: justify;
+    }
+    p:first-child {
+      font-size: 1.8rem;
+      line-height: 1.85rem;
+      margin-bottom: 20px;
+    }
+    form.woocommerce-EditAccountForm {
+      label {
+        font-size: .8rem;
+        span {
+          color: $defaultColor;
+        }
+      }
+      input {
+        height: 30px;
+        font-size: .9rem;
+        padding: 5px;
+        &:focus {
+          @include input;
+        }
+      }
+      fieldset {
+        margin-top: 20px;
+        legend {
+          font-size: 1.2rem;
+          margin-bottom:15px;
+          font-weight: bold;
+          color: $defaultColor;
+        }
+      }
+      button[type="submit"] {
+        margin-top: 5px;
+        float: right;
+      }
+    }
+
+    //tabs para la secretaria
+    .tab-content{
+      .csv_xml{
+        text-align: center;
+        display: block;
+        margin:20px 0;
+      }
+      .fm-form-container.fm-theme1{
+        width: 100%!important;
+      }
+      table.submissions{
+       th{
+         a{
+           color:white!important;
+           &:hover{
+             color:lighten(pink,5%)!important;
+           }
+         }
+       }   
+      }
+    }
+  
+  }
+  div.woocommerce-message,
+  .woocommerce-info {
+    border-top-color: $defaultColor;
+    &:before {
+      color: $defaultColor;
+    }
+    a.woocommerce-Button {
+      @include buttonStyle;
+    }
+  } // fixme terminar la vista de las direcciones en el dashboard de la tienda 
+  div.woocommerce-Addresses {
+    div.woocommerce-Address {
+      max-width: 50%;
+      a {
+        font-size: 1rem;
+        &:before {
+          @include icon("\f044", 5px);
+          font-size: 1rem;
+        }
+      }
+    }
+  } //checkout page
+  form[name="checkout"] {
+    div#customer_details {
+      div[class^="col"] {
+        max-width: 50%;
+        @media(max-width: 768px) {
+          max-width: 100%;
+        }
+        input {
+          @include input;
+        }
+      }
+      &~h3 {
+        margin-top: 20px;
+      }
+    }
+    textarea[name="order_comments"] {
+      min-height: 312px;
+    }
+  } //fin del checkout page
+}
+
+//Fin de estilos del carro de compras
+// woocommerce dashboard
+//Fin de Estilos para Woocommerce
+//Estilos Tabla Periodica
+
+@each $name,
+$color in (purple, $purple),
+(teal, $teal),
+(yellow, $yellow),
+(pink, $pink),
+(lightBlue, $lightBlue),
+(ultraLightBlue, $ultraLightBlue),
+(lightenTeal, $lightenTeal),
+(green, $green) {
+  .#{$name} {
+    background: $color;
+  }
+}
+
+@each $name,
+$color in (fg_purple, lighten(yellow, 10%)),
+(fg_teal, darken($teal, 20%)),
+(fg_yellow, $purple),
+(fg_pink, teal),
+(fg_lightBlue, brown),
+(fg_ultraLightBlue, brown),
+(fg_lightenTeal, $purple),
+(fg_green, teal) {
+  .#{$name} {
+    color: $color !important;
+  }
+}
+
+.coursesTable {
+  background: lighten(black, 95%);
+  padding: 15px;
+  text-align: center;
+  div.row {
+    height: auto;
+    @media (max-width: 375px) {
+      margin-bottom:2%;
+    }
+    span {
+      padding: 12px;
+    }
+    div {
+      padding: 0;
+      &.cursos {
+        margin: 0;
+        @media (max-width: 768px) {
+          margin:0 auto;
+          width: 80%;
+          float: left;
+        }
+        a {
+          width: 95px;
+          float: left;
+          transition: all .5s;
+          border: solid 1px white;
+        }
+        &.right {
+          a {
+            float: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+//Fin de estilos de la Tabla
+//collapsible section
+div#accordion {
+  width: 100%;
+  span.icon {
+    &:before {
+      @include icon('\f067', 3px);
+      transition: transform .3s ease-in-out;
+      display: inline-block;
+    }
+    &.open:before {
+      transform: rotate(180deg);
+      content: '\f068';
+    }
+  }
+  .card {
+    border-radius: 0;
+  }
+  .card-header {
+    color: white;
+    background: $defaultColor;
+    transition: background .2s ease;
+    a {
+      color: white;
+    }
+    &.open {
+      background: transparent;
+      color: $defaultColor;
+      transition: background .2s ease;
+      a {
+        color: $defaultColor;
+      }
+    }
+  }
+  .card-body {
+    padding: .8rem;
+  }
+  .tooltipLink {
+    padding: 10px;
+    border-top: solid 1px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    a {
+      color: rgba(0, 0, 0, 0.7);
+      font-size: .9rem;
+      i {
+        display: block;
+      }
+    }
+  }
+  .tooltipLink.no-top-border:first-child {
+    border-top: 0;
+  }
+}
+
+.tooltip-inner {
+  background-color: white;
+  color: gray;
+  text-align: left;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  min-width: 300px;
+  padding: 25px;
+}
+
+.closed {
+  .vertical {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(-90deg);
+  }
+  .horizontal {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(-90deg);
+    opacity: 1;
+  }
+}
+
+.opened {
+  opacity: 1;
+  .vertical {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(90deg);
+  }
+  .horizontal {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}

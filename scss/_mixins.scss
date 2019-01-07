@@ -1,0 +1,35 @@
+@mixin buttonStyle {
+    background: transparent !important;
+    border: solid 1px $defaultColor;
+    color: $defaultColor !important;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:hover {
+      color: lighten($defaultColor, 20%) !important;
+      border-color: lighten($defaultColor, 20%);
+      background: transparent;
+    }
+  }
+  
+  @mixin icon($content, $margin, $before:"true") {
+    @if $before==true {
+      margin-right: $margin;
+    }
+    @else {
+      margin-left: $margin;
+    }
+    font: normal normal normal 14px/1 FontAwesome;
+    content: $content;
+  }
+  
+  @mixin input {
+    padding: 5px;
+    &:focus {
+      box-shadow: 0 0 0 0.2rem lighten($defaultColor, 60%);
+      border: solid 1px $defaultColor;
+      box-shadow: 2px $defaultColor !important;
+      transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+  }
